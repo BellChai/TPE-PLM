@@ -30,6 +30,8 @@ device = args.device
 def model_eval():
     seed = set_seed()
 
+    train_on_data(args=args, dataset_name='PEMS03', seed=seed, model_para_path='gpt2.pth', \
+        mode='llm=llm plugin=1 mode_att=1 @cluster=6', save=False, config_path='scripts/PEMS.conf')
     train_on_data(args=args, dataset_name='PEMS04', seed=seed, model_para_path='gpt2.pth', \
         mode='llm=llm plugin=1 mode_att=1 @cluster=4', save=False, config_path='scripts/PEMS.conf')
     train_on_data(args=args, dataset_name='PEMS03', seed=seed, model_para_path='gpt2.pth', \
